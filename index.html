@@ -7,10 +7,10 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet" />
     <link href="style/style.css" rel="stylesheet" />
-    <script src="script/base64js.min.js"></script>
-    <script src="script/synthmata.js" type="text/javascript"></script>
-    <script src="script/dx7envdisplay.js" type="text/javascript"></script>
-    <script src="script/volcaFmRandomizer.js" type="text/javascript"></script>
+    <script src="../script/base64js.min.js"></script>
+    <script src="../script/synthmata.js" type="text/javascript"></script>
+    <script src="../script/dx7envdisplay.js" type="text/javascript"></script>
+    <script src="../script/volcaFmRandomizer.js" type="text/javascript"></script>
     <script>
         var valueDisplayFunctions = {
             "addOne": x => x + 1,
@@ -94,10 +94,21 @@
             });
         }
 
+        function setupUIControls() {
+            let UIScale = document.getElementById("UIScale")
+            UIScale.addEventListener('change', function(event){
+                var z = event.target.value
+                console.log(document.body.style.zoom = z/100)
+            })
+            console.log(UIScale, UIScale.value)
+            // UIScale.value = 100;
+        }
+
         function initialise(){
             setupValueDisplay();
             setupEnvelopes();
             setupRandomizer();
+            setupUIControls();
         }
 
 
@@ -106,15 +117,6 @@
 </head>
 
 <body onload="initialise()">
-
-    <script>
-      if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/script/sw.js')
-          .then(function() {
-                console.log('Service Worker Registered');
-          });
-      }
-    </script>
 
     <div id="head-wrapper">
         <div id="title-head">
@@ -158,6 +160,13 @@
                     <div class="controller controlflexlayout align-items-baseline justify-content-between">
                         <label for="modeYamaha">Yamaha</label>
                         <input id="modeYamaha" type="radio" name="mode" value="yamaha">
+                    </div>
+                </div>
+                <div class="controlitemgroup">
+                    <h3>UI</h3>
+                    <div class="controller">
+                        <label for="UIScale">Scale </label>
+                        <input class="" id="UIScale" max="100" min="50" type="range" step="5" value="100"/>
                     </div>
                 </div>
                 <div class="controlitemgroup">

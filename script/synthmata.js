@@ -119,7 +119,6 @@ function buildSaveLoadSharePanel() {
 
         sharableLink.textContent = createSharablePatchLink();
 
-        // if(johnChowning.style.display === 'block'){
         johnChowning.style.display = 'none'
         sharableLink.style.display = 'none'
         // }

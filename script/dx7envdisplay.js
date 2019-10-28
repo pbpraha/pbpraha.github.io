@@ -19,7 +19,7 @@ function makeEnvelope(r1Ele, r2Ele, r3Ele, r4Ele, l1Ele, l2Ele, l3Ele, l4Ele, ca
         let baseLine = canvasHeight -1//- paddingV
         let envHeight = canvasHeight - paddingV * 2
         let envWidth = canvasWidth - paddingH * 2
-        let gridLineCount = 4
+        let gridLineCount = 5
 
         // just to clean things up below...
         let r1 = parseInt(envInputs.r1.value)
@@ -54,18 +54,19 @@ function makeEnvelope(r1Ele, r2Ele, r3Ele, r4Ele, l1Ele, l2Ele, l3Ele, l4Ele, ca
 
         let ctx = canvas.getContext("2d");
 
-        ctx.translate(0.5,0.5) // prevents blury lines
-
-
         // CLEAR CANVAS
         ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
+        ctx.translate(0.5,0.5) // prevents blury lines
+
         // DRAW HORIZONTAL GRID LINES
         ctx.lineWidth   = 1
-        ctx.strokeStyle = "rgba(210, 180, 140, 0.25)"
+        ctx.strokeStyle = "rgba(210, 235, 215, 0.25)"
 
-        for(let i=0; i<=gridLineCount;i++){
-            let y = ((envHeight / (gridLineCount-1)) * i) - (i==(gridLineCount) ? 1 : 0)//+ paddingH
+        let stepy = (canvasHeight-1) / (gridLineCount-1)
+
+        for(let i=0; i<gridLineCount;i++){
+            let y = Math.ceil(stepy * i)
             ctx.beginPath()
             ctx.moveTo(0, y)
             ctx.lineTo(canvasWidth, y)

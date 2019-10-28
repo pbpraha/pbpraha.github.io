@@ -8,7 +8,8 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: radial-gradient(at 50% 30%, #555 45%, #222 95%);
+    background: #444;
+    background-image: radial-gradient(at 50% 30%, #444 45%, #222 95%);
     background-attachment: fixed;
     margin:2.25rem 0 0;
 }
@@ -145,7 +146,7 @@ a{color: #ddd;}
     margin-left: auto;
     margin-right: auto;
     top: 4rem;
-    width: 2em;
+    width: 10rem;
     left: 0;
     right: 0;
     color: #444;
@@ -153,10 +154,10 @@ a{color: #ddd;}
     border-radius: 1rem;
     opacity: 0.5;
     display: none;
-    font-size: 5.5vw;
+    font-size: 5rem;
     text-align: center;
     font-weight: 600;
-    padding: 1rem;
+    padding: 1rem 0;
     pointer-events: none;
 }
 
@@ -186,7 +187,6 @@ a{color: #ddd;}
 .controlitemgroup label{
     font-weight: 400;
     font-size: 0.9em;
-    opacity: 0.9;
     text-transform: uppercase;
     color: tan;
     display: block;
@@ -217,10 +217,6 @@ a{color: #ddd;}
     border-bottom-style: solid;
 }
 
-canvas{
-    height:80px;
-    width:290px;
-}
 .align-items-baseline{
     align-items: baseline;
 }

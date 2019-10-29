@@ -131,9 +131,6 @@ function buildSaveLoadSharePanel() {
                 sharableWrapper.style.display = 'block'
             }
         }
-
-
-
     })
 }
 

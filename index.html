@@ -24,6 +24,7 @@
         }
         var valueDisplayTimeout = null;
         var valueDisplayTimeoutIntervalMs = 1000;
+
         function doValueDisplay(event){
             let targetElementBounding = event.target.getBoundingClientRect();
             let valueDisplayer = document.getElementById("valueDisplay");
@@ -101,35 +102,64 @@
             // set the ui zoom
             let maincontent = document.getElementById("main-content")
             let uiscaler = document.getElementById("UIScale")
+            let HUDposH = document.getElementById("HUDposH")
+            let HUDposV = document.getElementById("HUDposV")
+            let valueDisplayer = document.getElementById("valueDisplay");
+
             let zoom = preferencesStorage.getItem('SM_PARAMS_UI_ZOOM') || 1
+            let hudPosH = preferencesStorage.getItem('SM_PARAMS_UI_HUDPOSH') || 50
+            let hudPosV = preferencesStorage.getItem('SM_PARAMS_UI_HUDPOSV') || 0
 
             uiscaler.value = zoom * 100
-
             maincontent.style.transform = `scale(${zoom},${zoom})`
 
-            uiscaler.addEventListener('change', function(event){
+            uiscaler.addEventListener('input', function(event){
                 console.log(event.target.value)
                 let zoom = event.target.value/100
                 maincontent.style.transform = `scale(${zoom},${zoom})`
                 preferencesStorage.setItem('SM_PARAMS_UI_ZOOM', zoom)
             })
 
+
+            HUDposH.value = hudPosH
+            HUDposV.value = hudPosV
+
+            valueDisplayer.style.left = hudPosH + '%'
+            valueDisplayer.style.top = hudPosV + '%'
+
+            HUDposH.addEventListener('input', event => {
+                let value =  event.target.value
+                valueDisplayer.style.display = "block";
+                valueDisplayer.style.left = value + '%'
+                valueDisplayer.innerText = parseInt(value);
+                preferencesStorage.setItem('SM_PARAMS_UI_HUDPOSH', value)
+                clearTimeout(valueDisplayTimeout);
+                valueDisplayTimeout = setTimeout(function () {
+                    valueDisplayer.style.display = "none";
+                }, valueDisplayTimeoutIntervalMs);
+            })
+
+            HUDposV.addEventListener('input', event => {
+                let value = event.target.value
+                valueDisplayer.style.display = "block";
+                valueDisplayer.style.top = value + '%'
+                valueDisplayer.innerText = parseInt(value);
+                preferencesStorage.setItem('SM_PARAMS_UI_HUDPOSV', value)
+                clearTimeout(valueDisplayTimeout);
+                valueDisplayTimeout = setTimeout(function () {
+                    valueDisplayer.style.display = "none";
+                }, valueDisplayTimeoutIntervalMs);
+            })
+
+
             let operatorPanels = document.querySelectorAll('.controlpanel.operatorparameters');
 
             operatorPanels.forEach(n => {
                 let t = n.querySelector('.sysexParameterBitswitch')
                 t.addEventListener('change', e => {
-                    // console.log(ot.parentNode.parentNode.nextSibling.innerHTML)
-                    if(e.target.checked){
-                        console.log('ON')
-                        n.children[1].style.opacity = 1
-                        n.children[1].style.pointerEvents = 'all'
-                    }else{
-                        console.log('OFF')
-                        n.children[1].style.opacity = 0.25
-                        n.children[1].style.pointerEvents = 'none'
-                    }
-
+                    let checked = e.target.checked
+                    n.children[1].style.opacity = checked ? 1 : 0.25
+                    n.children[1].style.pointerEvents = checked ? 'all' : 'none'
                 })
             })
 
@@ -199,6 +229,14 @@
                     <div class="controller">
                         <label for="UIScale">Scale </label>
                         <input class="" id="UIScale" max="100" min="50" type="range" value="100"/>
+                    </div>
+                    <div class="controller">
+                        <label for="UIScale">HUD Position Horizontal </label>
+                        <input class="" id="HUDposH" max="100" min="0" type="range" value="50"/>
+                    </div>
+                    <div class="controller">
+                        <label for="UIScale">HUD Position Vertical </label>
+                        <input class="" id="HUDposV" max="100" min="0" type="range" value="00"/>
                     </div>
                 </div>
                 <div class="controlitemgroup">
@@ -303,7 +341,7 @@
                 <div class="controlitemgroup">
                     <h3>LFO Settings</h3>
                     <div class="controller pb-3">
-                        <canvas id="lfoCanvas" width="230" height="61"/>
+                        <canvas id="lfoCanvas" width="180" height="61"/>
                     </div>
                     <div class="controller">
                         <label for="sysex142">LFO Wave Shape </label>
@@ -456,7 +494,7 @@
                 </div>
                 <div class="controlitemgroup">
                     <div class="envelopeCanvasContainer">
-                        <canvas class="opCanvas" id="op1EnvCanvas" width="290" height="80"/>
+                        <canvas class="opCanvas" id="op1EnvCanvas" width="280" height="80"/>
                     </div>
                 </div>
                 <div class="controlitemgroup">
@@ -576,7 +614,7 @@
                 </div>
                 <div class="controlitemgroup">
                     <div class="envelopeCanvasContainer">
-                        <canvas class="opCanvas" id="op2EnvCanvas" width="290" height="80"/>
+                        <canvas class="opCanvas" id="op2EnvCanvas" width="280" height="80"/>
                     </div>
                 </div>
                 <div class="controlitemgroup">
@@ -696,7 +734,7 @@
                 </div>
                 <div class="controlitemgroup">
                     <div class="envelopeCanvasContainer">
-                        <canvas class="opCanvas" id="op3EnvCanvas" width="290" height="80"/>
+                        <canvas class="opCanvas" id="op3EnvCanvas" width="280" height="80"/>
                     </div>
                 </div>
                 <div class="controlitemgroup">
@@ -816,7 +854,7 @@
                 </div>
                 <div class="controlitemgroup">
                     <div class="envelopeCanvasContainer">
-                        <canvas class="opCanvas" id="op4EnvCanvas" width="290" height="80"/>
+                        <canvas class="opCanvas" id="op4EnvCanvas" width="280" height="80"/>
                     </div>
                 </div>
                 <div class="controlitemgroup">
@@ -936,7 +974,7 @@
                 </div>
                 <div class="controlitemgroup">
                     <div class="envelopeCanvasContainer">
-                        <canvas class="opCanvas" id="op5EnvCanvas" width="290" height="80"/>
+                        <canvas class="opCanvas" id="op5EnvCanvas" width="280" height="80"/>
                     </div>
                 </div>
                 <div class="controlitemgroup">
@@ -1056,7 +1094,7 @@
                 </div>
                 <div class="controlitemgroup">
                     <div class="envelopeCanvasContainer">
-                        <canvas class="opCanvas" id="op6EnvCanvas" width="290" height="80"/>
+                        <canvas class="opCanvas" id="op6EnvCanvas" width="280" height="80"/>
                     </div>
                 </div>
                 <div class="controlitemgroup">
@@ -1129,7 +1167,9 @@
         </div>
 
     </div>
-    <div id="valueDisplay">100</div><!-- This has to be rendered last so it draws over other absolutely positioned elements -->
+    <div id="valueDisplayWrapper">
+        <div id="valueDisplay">100</div><!-- This has to be rendered last so it draws over other absolutely positioned elements -->
+    </div>
 </body>
 
 </html>

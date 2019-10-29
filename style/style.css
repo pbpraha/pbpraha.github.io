@@ -78,15 +78,27 @@ a{color: #ddd;}
     padding: 0 1rem;
 }
 
-#sharableLink{
+#sharableWrapper{
     display:none;
+}
+#sharableLink{
     font-size: smaller;
-    color: #999;
+    color: #222;
     opacity: 1;
-    background: #222;
-    padding: 0.5rem;
+    background: #FFF;
+    padding: 1rem 1rem 0;
     word-break: break-all;
 }
+
+#qrcode{}
+#qrcodeWrapper{
+    width: 269px;
+    height: 269px;
+    padding:24px;
+    background: #fff;
+}
+
+
 #johnChowning{
     background: #222;
     width: 100%;
@@ -228,4 +240,3 @@ a{color: #ddd;}
 .justify-content-between{
     justify-content: space-between;
 }
-

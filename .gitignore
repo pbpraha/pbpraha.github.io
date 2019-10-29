@@ -1,2 +1,21 @@
 
 .DS_Store
+vendor/QR-Code-generator-master/c/*
+vendor/QR-Code-generator-master/cpp/*
+vendor/QR-Code-generator-master/java/*
+vendor/QR-Code-generator-master/python/*
+vendor/QR-Code-generator-master/rust/*
+*.rs
+*.py
+*.markdown
+*.cfg
+*.toml
+*.sh
+vendor/QR-Code-generator-master/typescript-javascript/qrcodegen-input-demo.html
+vendor/QR-Code-generator-master/typescript-javascript/qrcodegen-input-demo.js
+vendor/QR-Code-generator-master/typescript-javascript/qrcodegen-input-demo.ts
+vendor/QR-Code-generator-master/typescript-javascript/qrcodegen.ts
+vendor/QR-Code-generator-master/typescript-javascript/qrcodegen-worker.ts
+vendor/QR-Code-generator-master/typescript-javascript/qrcodegen-output-demo.ts
+vendor/QR-Code-generator-master/typescript-javascript/qrcodegen-output-demo.js
+vendor/QR-Code-generator-master/typescript-javascript/qrcodegen-output-demo.html

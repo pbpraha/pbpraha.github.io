@@ -1,6 +1,7 @@
 .btn{
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+    font-size: 11px !important;
     min-width: 5em;
     max-width: 5em;
     padding:0.2rem;

@@ -1,7 +1,8 @@
 select{
     -webkit-appearance: none;
     display: inline-block;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat';
+    font-size: 11px !important;
     text-transform: uppercase;
     background-color: tan;
     border:none;

@@ -1,8 +1,9 @@
 .btn{
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    min-width: 5.5em;
-    padding:0.25rem;
+    min-width: 5em;
+    max-width: 5em;
+    padding:0.2rem;
     border:none;
     text-align: left;
     text-transform: uppercase;

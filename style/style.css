@@ -3,7 +3,7 @@
 @import 'checkbox.css';
 @import 'input-type-file.css';
 @import 'select.css';
-@import 'slider.css';
+@import 'slider-small.css';
 @import 'textarea.css';
 
 body {
@@ -12,10 +12,12 @@ body {
     background-image: radial-gradient(at 50% 30%, #444 45%, #222 95%);
     background-attachment: fixed;
     margin:2.25rem 0 0;
+    font-size: 1rem;
+    text-rendering:geometricPrecision;
 }
-*{box-sizing: border-box;}
+*{box-sizing: border-box;user-select: none;}
 *:focus {outline:0;}
-a{color: #ddd;}
+a{color: #ccc;text-decoration: none;font-weight:bold}
 
 .pb-1{padding-bottom:0.25rem;}
 .pt-1{padding-top:0.25rem;}
@@ -79,22 +81,18 @@ a{color: #ddd;}
 }
 
 #sharableWrapper{
-    display:none;
+    /*display:none;*/
 }
 #sharableLink{
     font-size: smaller;
-    color: #222;
-    opacity: 1;
-    background: #FFF;
-    padding: 1rem 1rem 0;
     word-break: break-all;
 }
 
 #qrcode{}
 #qrcodeWrapper{
-    width: 269px;
-    height: 269px;
-    padding:24px;
+    /*width: 269px;*/
+    /*height: 269px;*/
+    /*padding:24px;*/
     background: #fff;
 }
 
@@ -184,7 +182,7 @@ a{color: #ddd;}
     color:tan;
     font-weight: normal;
     text-transform: uppercase;
-    font-size: small;
+    font-size: 1em;
     opacity: 0.9;
 }
 
@@ -196,14 +194,15 @@ a{color: #ddd;}
 }
 
 .controlitemgroup{
-    margin: 0 0 1rem;
     width: 100%;
     color: #858cb5;
+}
+.controlitemgroup:not(:last-child){
+    margin: 0 0 0.75em;
 }
 
 .controlitemgroup label{
     font-weight: 400;
-    font-size: 0.9em;
     text-transform: uppercase;
     color: tan;
     display: block;
@@ -216,23 +215,25 @@ a{color: #ddd;}
 }
 
 .controlitemgroup input{
-    display: inline-block;
-    margin-bottom: 0.5em;
+    display: block;
 }
-
-
 .controlitemgroup h3{
-    color: #b4bdf9;
+    color: rgba(180, 189, 249,1);
     margin-top: 0;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     white-space: nowrap;
-    opacity: 0.9;
     font-weight: normal;
     text-transform: uppercase;
-    font-size: small;
+    border-color: rgba(180, 189, 249,0.5);
     border-bottom-width: 1px;
     border-bottom-style: solid;
 }
+
+.controlitemgroup label,
+.controlitemgroup h3{
+    font-size: 0.8em;
+}
+
 
 .align-items-baseline{
     align-items: baseline;
@@ -240,3 +241,5 @@ a{color: #ddd;}
 .justify-content-between{
     justify-content: space-between;
 }
+
+.opCanvas{}

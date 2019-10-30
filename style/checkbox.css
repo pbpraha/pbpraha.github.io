@@ -1,15 +1,16 @@
 .toggle-button input[type="checkbox"] {
   -webkit-appearance: none;
   position: relative;
-  margin: 0;
+  min-width: 5em;
+  max-width: 5em;
+  margin: -1em 0;
   color:#222;
 }
 
 .toggle-button input[type="checkbox"]::before {
   content: 'ON';
   display: block;
-  min-width: 56px;
-  padding:0.25rem;
+  padding:0.2rem;
   text-align: right;
  }
 

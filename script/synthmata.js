@@ -111,27 +111,27 @@ function buildSaveLoadSharePanel() {
     document.getElementById("sysexFileChooser").addEventListener('change', checkSysexFileLoad)
     document.getElementById("sysexSaveButton").addEventListener('click', saveSysex)
     document.getElementById("initPatchButton").addEventListener('click', loadInitPatch)
-    document.getElementById("createSharableLinkButton").addEventListener('click', function(event){
+    // document.getElementById("createSharableLinkButton").addEventListener('click', function(event){
 
-        let sharableWrapper = document.getElementById("sharableWrapper")
-        let sharableLink = document.getElementById("sharableLink")
-        let johnChowning = document.getElementById("johnChowning")
-        let oldState     = sharableWrapper.style.display || 'none'
+    //     let sharableWrapper = document.getElementById("sharableWrapper")
+    //     let sharableLink = document.getElementById("sharableLink")
+    //     let johnChowning = document.getElementById("johnChowning")
+    //     let oldState     = sharableWrapper.style.display || 'none'
 
-        sharableLink.textContent = createSharablePatchLink();
+    //     sharableLink.textContent = createSharablePatchLink();
 
-        johnChowning.style.display = 'none'
-        sharableWrapper.style.display = 'none'
-        // }
+    //     johnChowning.style.display = 'none'
+    //     sharableWrapper.style.display = 'none'
+    //     // }
 
-        if(event.shiftKey){
-            johnChowning.style.display = 'block'
-        }else{
-            if(oldState === 'none'){
-                sharableWrapper.style.display = 'block'
-            }
-        }
-    })
+    //     if(event.shiftKey){
+    //         johnChowning.style.display = 'block'
+    //     }else{
+    //         if(oldState === 'none'){
+    //             sharableWrapper.style.display = 'block'
+    //         }
+    //     }
+    // })
 }
 
 function setupParameterControls() {
@@ -535,14 +535,14 @@ function createSharablePatchLink(){
     parser.href = window.location;
     let result =  parser.origin + parser.pathname + "?p=" + encodeURIComponent(patchAsB64);
 
-    var QRC = qrcodegen.QrCode;
-    var qr = QRC.encodeText(result, QRC.Ecc.LOW);
+    // var QRC = qrcodegen.QrCode;
+    // var qr = QRC.encodeText(result, QRC.Ecc.LOW);
 
-    const scale = 3
-    const border = 6
-    const canvas = document.getElementById("qrcode")
+    // const scale = 2
+    // const border = 6
+    // const canvas = document.getElementById("qrcode")
 
-    qr.drawCanvas(scale, border, canvas);
+    // qr.drawCanvas(scale, border, canvas);
 
     return result;
 }

@@ -160,6 +160,7 @@
                     let checked = e.target.checked
                     n.children[1].style.opacity = checked ? 1 : 0.25
                     n.children[1].style.pointerEvents = checked ? 'all' : 'none'
+                    // n.children[1].style.display = checked ? 'block' : 'none'
                 })
             })
 
@@ -248,13 +249,7 @@
                             <label class="btn btn-green" for="sysexFileChooser">Load</label>
                             <!-- <button class="btn btn-tan" id="sysexLoadButton">Load</button> -->
                             <button class="btn btn-green" id="sysexSaveButton">Save</button>
-                            <button class="btn btn-purple" id="createSharableLinkButton">Share</button>
-                        </div>
-                        <div id="sharableWrapper">
-                            <div id="sharableLink"></div>
-                            <div id="qrcodeWrapper">
-                                <canvas id="qrcode"></canvas>
-                            </div>
+                            <!-- <button class="btn btn-purple" id="createSharableLinkButton">Share</button> -->
                         </div>
                         <div id="johnChowning">
                             <a href="https://en.wikipedia.org/wiki/John_Chowning" target="_blank">
@@ -273,11 +268,20 @@
                         CSS Slider - <a href="https://codepen.io/thebabydino/pen/azVKey" target="_blank">@thebabydino</a>
                     </small>
                 </div>
-                <div class="controlitemgroup">
-                    <h3>Share the love</h3>
+                <div class="controlitemgroup pb-2">
+                    <h3>Share</h3>
                     <small>
                         Share your patches on <a href="https://www.facebook.com/groups/korgvolcapatch/" target="_blank">facebook</a>
                     </small>
+                </div>
+                <div class="controlitemgroup">
+                    <h3>Patch URL</h3>
+                    <div id="sharableWrapper">
+                        <div id="sharableLink"></div>
+                        <!-- <div id="qrcodeWrapper">
+                            <canvas id="qrcode" width="100" height="100"></canvas>
+                        </div> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -294,7 +298,7 @@
                         <label for="sysex135">Feedback </label>
                         <input class="sysexParameter" data-sysexparameterno="135" id="sysex135" max="7" min="0" type="range" />
                     </div>
-                    <div class="controller controlflexlayout align-items-baseline justify-content-between pt-1 pb-3">
+                    <div class="controller controlflexlayout align-items-baseline justify-content-between py-3">
                         <label for="sysex136">Key Sync </label>
                         <div class="toggle-button">
                             <input id="sysex136" class="sysexParameterBitswitch" data-sysexparameterno="136" data-sysexparameterbitmask="1" type="checkbox">
@@ -346,7 +350,7 @@
                 <div class="controlitemgroup">
                     <h3>LFO Settings</h3>
                     <div class="controller pb-3">
-                        <canvas id="lfoCanvas" width="180" height="61"/>
+                        <canvas id="lfoCanvas" width="150" height="61"/>
                     </div>
                     <div class="controller">
                         <label for="sysex142">LFO Wave Shape </label>
@@ -369,7 +373,7 @@
                         <input class="sysexParameter" data-sysexparameterno="138" id="sysex138" max="99" min="0" type="range" />
                     </div>
                     <div class="controller">
-                        <div class="controlflexlayout align-items-baseline justify-content-between pt-1 pb-3">
+                        <div class="controlflexlayout align-items-baseline justify-content-between py-3">
                             <label for="sysex141">LFO Key Sync </label>
                             <div class="toggle-button">
                                 <input id="sysex141" class="sysexParameterBitswitch" data-sysexparameterno="141" type="checkbox">
@@ -499,7 +503,7 @@
                 </div>
                 <div class="controlitemgroup">
                     <div class="envelopeCanvasContainer">
-                        <canvas class="opCanvas" id="op1EnvCanvas" width="280" height="80"/>
+                        <canvas class="opCanvas" id="op1EnvCanvas" width="200" height="80"/>
                     </div>
                 </div>
                 <div class="controlitemgroup">
@@ -619,7 +623,7 @@
                 </div>
                 <div class="controlitemgroup">
                     <div class="envelopeCanvasContainer">
-                        <canvas class="opCanvas" id="op2EnvCanvas" width="280" height="80"/>
+                        <canvas class="opCanvas" id="op2EnvCanvas" width="200" height="80"/>
                     </div>
                 </div>
                 <div class="controlitemgroup">
@@ -739,7 +743,7 @@
                 </div>
                 <div class="controlitemgroup">
                     <div class="envelopeCanvasContainer">
-                        <canvas class="opCanvas" id="op3EnvCanvas" width="280" height="80"/>
+                        <canvas class="opCanvas" id="op3EnvCanvas" width="200" height="80"/>
                     </div>
                 </div>
                 <div class="controlitemgroup">
@@ -859,7 +863,7 @@
                 </div>
                 <div class="controlitemgroup">
                     <div class="envelopeCanvasContainer">
-                        <canvas class="opCanvas" id="op4EnvCanvas" width="280" height="80"/>
+                        <canvas class="opCanvas" id="op4EnvCanvas" width="200" height="80"/>
                     </div>
                 </div>
                 <div class="controlitemgroup">
@@ -979,7 +983,7 @@
                 </div>
                 <div class="controlitemgroup">
                     <div class="envelopeCanvasContainer">
-                        <canvas class="opCanvas" id="op5EnvCanvas" width="280" height="80"/>
+                        <canvas class="opCanvas" id="op5EnvCanvas" width="200" height="80"/>
                     </div>
                 </div>
                 <div class="controlitemgroup">
@@ -1099,7 +1103,7 @@
                 </div>
                 <div class="controlitemgroup">
                     <div class="envelopeCanvasContainer">
-                        <canvas class="opCanvas" id="op6EnvCanvas" width="280" height="80"/>
+                        <canvas class="opCanvas" id="op6EnvCanvas" width="200" height="80"/>
                     </div>
                 </div>
                 <div class="controlitemgroup">

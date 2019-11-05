@@ -12,7 +12,6 @@
     <script src="script/dx7envdisplay.js" type="text/javascript"></script>
     <script src="script/dx7lfodisplay.js" type="text/javascript"></script>
     <script src="script/volcaFmRandomizer.js" type="text/javascript"></script>
-    <!-- <script src="vendor/QR-Code-generator-master/typescript-javascript/qrcodegen.js" type="application/javascript"></script> -->
 
     <script>
 
@@ -27,7 +26,6 @@
         var valueDisplayTimeoutIntervalMs = 1000;
 
         function doValueDisplay(event){
-            // let targetElementBounding = event.target.getBoundingClientRect();
             let valueDisplayer = document.getElementById("valueDisplay");
             let disFunc = valueDisplayFunctions[event.target.dataset.displayvaluefunc];
             if(disFunc){
@@ -278,9 +276,6 @@
                     <h3>Patch URL</h3>
                     <div id="sharableWrapper">
                         <div id="sharableLink"></div>
-                        <!-- <div id="qrcodeWrapper">
-                            <canvas id="qrcode" width="100" height="100"></canvas>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -553,10 +548,6 @@
                             <div class="toggle-button">
                                 <input id="sysex122" class="sysexParameterBitswitch" data-sysexparameterno="122" data-sysexparameterbitmask="1" type="checkbox" labelOn="FIXED" labelOff="RATIO">
                             </div>
-                            <!-- <select class="sysexParameter" data-sysexparameterno="122" id="sysex122">
-                                <option label="Ratio" value="0"></option>
-                                <option label="Fixed" value="1"></option>
-                            </select> -->
                         </div>
                     </div>
                 </div>
@@ -678,10 +669,6 @@
                             </div>
 
 
-                            <!-- <select class="sysexParameter" data-sysexparameterno="101" id="sysex101">
-                                <option label="Ratio" value="0"></option>
-                                <option label="Fixed" value="1"></option>
-                            </select> -->
                         </div>
                     </div>
                 </div>
@@ -802,10 +789,6 @@
                                 <input id="sysex80" class="sysexParameterBitswitch" data-sysexparameterno="80" data-sysexparameterbitmask="1" type="checkbox" labelOn="FIXED" labelOff="RATIO">
                             </div>
 
-                            <!-- <select class="sysexParameter" data-sysexparameterno="80" id="sysex80">
-                                <option label="Ratio" value="0"></option>
-                                <option label="Fixed" value="1"></option>
-                            </select> -->
                         </div>
                     </div>
                 </div>
@@ -925,10 +908,6 @@
                             <div class="toggle-button">
                                 <input id="sysex59" class="sysexParameterBitswitch" data-sysexparameterno="59" data-sysexparameterbitmask="1" type="checkbox" labelOn="FIXED" labelOff="RATIO">
                             </div>
-                            <!-- <select class="sysexParameter" data-sysexparameterno="59" id="sysex59">
-                                <option label="Ratio" value="0"></option>
-                                <option label="Fixed" value="1"></option>
-                            </select> -->
                         </div>
                     </div>
                 </div>
@@ -1048,10 +1027,6 @@
                             <div class="toggle-button">
                                 <input id="sysex38" class="sysexParameterBitswitch" data-sysexparameterno="38" data-sysexparameterbitmask="1" type="checkbox" labelOn="FIXED" labelOff="RATIO">
                             </div>
-                            <!-- <select class="sysexParameter" data-sysexparameterno="38" id="sysex38">
-                                <option label="Ratio" value="0"></option>
-                                <option label="Fixed" value="1"></option>
-                            </select> -->
                         </div>
                     </div>
                 </div>
@@ -1171,10 +1146,6 @@
                             <div class="toggle-button">
                                 <input id="sysex17" class="sysexParameterBitswitch" data-sysexparameterno="17" data-sysexparameterbitmask="1" type="checkbox" labelOn="FIXED" labelOff="RATIO">
                             </div>
-                            <!-- <select class="sysexParameter" data-sysexparameterno="17" id="sysex17">
-                                <option label="Ratio" value="0"></option>
-                                <option label="Fixed" value="1"></option>
-                            </select> -->
                         </div>
                     </div>
                 </div>

@@ -104,7 +104,6 @@ function buildSetupPanel(midiAccess) {
 
     let modeYamahaRadioInput = document.getElementById("modeYamaha");
     modeYamahaRadioInput.addEventListener("change", switchModes);
-
 }
 
 function buildSaveLoadSharePanel() {
@@ -318,7 +317,6 @@ function handleValueChangeVoiceDump(event) {
             sysexDumpData[parameterNo] = value & 0x7f;
             //sendSysexDump()
 
-            sharableLink.textContent = createSharablePatchLink();
 
         }else if (event.target.classList.contains("sysexParameterText")){
             let parameterNo = parseInt(ele.dataset.sysexparameterno);
@@ -351,6 +349,8 @@ function handleValueChangeVoiceDump(event) {
                 sysexDumpData[parameterNo] &= ~mask;
             }
         }
+
+        sharableLink.textContent = createSharablePatchLink();
         sendSysexDump()
     }
 }

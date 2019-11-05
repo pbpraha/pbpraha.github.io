@@ -6,25 +6,31 @@
   margin: -1em 0;
   font-size: 11px !important;
   color:#222;
+  background-color: tan;
 }
 
 .toggle-button input[type="checkbox"]::before {
-  content: 'ON';
+  content: attr(labelOn);
   display: block;
   padding:0.2rem;
   text-align: right;
  }
 
 .toggle-button input[type="checkbox"]:checked::before {
-  background-color: #78d4ce;
 }
 
 .toggle-button input[type="checkbox"]:not(:checked)::before {
-  content: 'OFF';
-  background-color: salmon;
+  content: attr(labelOff);
   text-align: left;
 }
 
 .toggle-button input[type="checkbox"]:disabled::before {
   background-color: darkgrey;
+}
+
+.toggle-button.toggle-on-off input[type="checkbox"]:checked::before {
+  background-color: #78d4ce;
+}
+.toggle-button.toggle-on-off input[type="checkbox"]:not(:checked)::before {
+  background-color: salmon;
 }

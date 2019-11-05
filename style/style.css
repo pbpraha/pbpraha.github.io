@@ -9,11 +9,13 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background: #444;
-    background-image: radial-gradient(at 50% 30%, #444 45%, #222 95%);
+    /*background-image: radial-gradient(at 50% 30%, #444 45%, #222 95%);*/
+    background-image: radial-gradient(at 50% 30%, #463f36 45%, #231d16 95%); /*brown*/
     background-attachment: fixed;
     margin:2.25rem 0 0;
     font-size: 1rem;
     text-rendering:geometricPrecision;
+    overflow: hidden;
 }
 *{box-sizing: border-box;user-select: none;}
 *:focus {outline:0;}
@@ -36,13 +38,13 @@ a{color: #ccc;text-decoration: none;font-weight:bold}
     display:flex;
     align-items: center;
     width: 100%;
-    background: #333;
+    background: #383128;
     height:2.25rem;
     top:0;
     color: #ddd;
-    border-width: 1px;
-    border-color: rgba(0,0,0,0.75);
-    border-bottom-style: solid;
+    /*border-width: 1px;*/
+    /*border-color: rgba(0,0,0,0.75);*/
+    /*border-bottom-style: solid;*/
     z-index: 1004;
     box-shadow: 0 2px  8px rgba(0, 0, 0, 0.5)
 }
